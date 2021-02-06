@@ -2,31 +2,55 @@ name: rexuiz
 version: 2.5.2-210206
 summary: Single and Multiplayer First Person Shooter Game
 description: |
-  Successor of Nexuiz Classic. Fast paced shooter inspired by
+  Successor of Nexuiz Classic(r)(tm). Fast paced shooter inspired by
   old school FPS games.
-confinement: classic
-base: core18
+confinement: strict
 icon: rexuiz.png
-
+base: core18
+grade: stable
 parts:
   rexuiz:
     plugin: dump
     source: https://downloads.sourceforge.net/project/rexuiz/Rexuiz-$SNAPCRAFT_PROJECT_VERSION.zip
+    stage-packages: 
+      - libcurl4
+      - libfreetype6
+      - libglu1-mesa
+      - libpulse0
+      - libsdl2-2.0-0
+      - libx11-6
+      - libxau6
+      - libxcb1
+      - libxdmcp6
+      - libxext6
+      - libxpm4
+      - libxxf86vm1
+    prime:
+      - -Rexuiz/Rexuiz.app/
+      - -Rexuiz/RexuizLauncher*
+      - -Rexuiz/*.exe
+      - -Rexuiz/bin32
+      - -Rexuiz/bin64
+      - -Rexuiz/sources
   environment:
-    plugin: copy
-    files:
+    plugin: dump
+    source: .
+    organize:
       rexuiz.desktop: usr/share/applications/rexuiz.desktop
       rexuiz.png: usr/share/icons/hicolor/128x128/rexuiz.png
-
+      rexuiz-snap-wrapper.sh: bin/rexuiz-snap-wrapper.sh
 apps:
   Rexuiz:
-    command: Rexuiz/rexuiz-linux-sdl-x86_64
+    command: rexuiz-snap-wrapper.sh
+    environment:
+      SDL_AUDIODRIVER: pulseaudio
     plugs:
+      - audio-playback
+      - network
+      - network-bind
       - opengl
       - wayland
       - x11
-      - network
-      - audio-playback
-      - home
       - desktop
+      - desktop-legacy
     desktop: usr/share/applications/rexuiz.desktop
