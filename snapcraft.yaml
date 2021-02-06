@@ -1,0 +1,32 @@
+name: rexuiz
+version: 2.5.2-210206
+summary: Single and Multiplayer First Person Shooter Game
+description: |
+  Successor of Nexuiz Classic. Fast paced shooter inspired by
+  old school FPS games.
+confinement: classic
+base: core18
+icon: rexuiz.png
+
+parts:
+  rexuiz:
+    plugin: dump
+    source: https://downloads.sourceforge.net/project/rexuiz/Rexuiz-$SNAPCRAFT_PROJECT_VERSION.zip
+  environment:
+    plugin: copy
+    files:
+      rexuiz.desktop: usr/share/applications/rexuiz.desktop
+      rexuiz.png: usr/share/icons/hicolor/128x128/rexuiz.png
+
+apps:
+  Rexuiz:
+    command: Rexuiz/rexuiz-linux-sdl-x86_64
+    plugs:
+      - opengl
+      - wayland
+      - x11
+      - network
+      - audio-playback
+      - home
+      - desktop
+    desktop: usr/share/applications/rexuiz.desktop

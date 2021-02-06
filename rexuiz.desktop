@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Rexuiz
+Exec=rexuiz.Rexuiz %F
+Icon=${SNAP}/usr/share/icons/hicolor/128x128/rexuiz.png
+Comment=First person shooter
+Terminal=false
+Categories=Game;
