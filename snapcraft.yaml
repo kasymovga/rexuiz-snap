@@ -44,6 +44,7 @@ parts:
       rexuiz-snap-wrapper.sh: bin/rexuiz-snap-wrapper.sh
 apps:
   Rexuiz:
+    extensions: [gnome-3-34]
     command: rexuiz-snap-wrapper.sh
     environment:
       SDL_AUDIODRIVER: pulseaudio
