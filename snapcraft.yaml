@@ -35,13 +35,19 @@ parts:
       - -Rexuiz/bin32
       - -Rexuiz/bin64
       - -Rexuiz/sources
-  environment:
+  desktop:
     plugin: dump
     source: .
     organize:
       rexuiz.desktop: usr/share/applications/rexuiz.desktop
       rexuiz.png: usr/share/icons/hicolor/128x128/rexuiz.png
-      rexuiz-snap-wrapper.sh: bin/rexuiz-snap-wrapper.sh
+    prime:
+      - -rexuiz-snap-wrapper.sh
+  wrapper:
+    plugin: dump
+    source: .
+    override-build: |
+      install -D -m 755 rexuiz-snap-wrapper.sh $SNAPCRAFT_PART_INSTALL/bin/rexuiz-snap-wrapper.sh
 apps:
   Rexuiz:
     extensions: [gnome-3-34]
