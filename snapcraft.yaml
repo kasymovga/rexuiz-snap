@@ -1,5 +1,5 @@
 name: rexuiz
-version: 2.5.2-210206
+version: 2.5.2-210314
 summary: Single and Multiplayer First Person Shooter Game
 description: |
   Successor of Nexuiz Classic(r)(tm). Fast paced shooter inspired by
@@ -15,7 +15,7 @@ parts:
   rexuiz:
     plugin: dump
     source: https://downloads.sourceforge.net/project/rexuiz/Rexuiz-$SNAPCRAFT_PROJECT_VERSION.zip
-    stage-packages: 
+    stage-packages:
       - libcurl4
       - libfreetype6
       - libglu1-mesa
