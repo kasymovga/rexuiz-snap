@@ -11,4 +11,4 @@ then
 else
 	export LD_LIBRARY_PATH="$SNAP/usr/lib/x86_64-linux-gnu/pulseaudio"
 fi
-exec "$SNAP/Rexuiz/rexuiz-linux-sdl-x86_64"
+exec "$SNAP/Rexuiz/rexuiz-linux-sdl-x86_64" "$@"
