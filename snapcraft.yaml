@@ -1,6 +1,6 @@
 name: rexuiz
 title: Rexuiz
-version: 2.5.3-230108
+version: 2.5.4-230223
 summary: Single and Multiplayer First Person Shooter Game
 description: |
   Successor of Nexuiz Classic(r)(tm). Fast paced shooter inspired by
@@ -63,5 +63,6 @@ apps:
       - wayland
       - x11
       - desktop
+      - unity7
       - desktop-legacy
     desktop: usr/share/applications/rexuiz.desktop
