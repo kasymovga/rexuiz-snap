@@ -1,6 +1,6 @@
 name: rexuiz
 title: Rexuiz
-version: 2.5.4-231015
+version: 2.5.4-231229
 summary: Single and Multiplayer First Person Shooter Game
 description: |
   Successor of Nexuiz Classic(r)(tm). Fast paced shooter inspired by
@@ -36,6 +36,7 @@ parts:
       - -Rexuiz/bin32
       - -Rexuiz/bin64
       - -Rexuiz/sources
+      - -Rexuiz/mapeditor
   desktop:
     plugin: dump
     source: .
