@@ -7,7 +7,7 @@ description: |
   old school FPS games.
 confinement: strict
 icon: rexuiz.png
-base: core18
+base: core20
 grade: stable
 architectures:
   - build-on: amd64
