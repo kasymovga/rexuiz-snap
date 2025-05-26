@@ -52,10 +52,10 @@ parts:
       install -D -m 755 rexuiz-snap-wrapper.sh $SNAPCRAFT_PART_INSTALL/bin/rexuiz-snap-wrapper.sh
 apps:
   Rexuiz:
-    extensions: [gnome-3-34]
+    extensions: [gnome-3-36]
     command: rexuiz-snap-wrapper.sh
     environment:
-      SDL_AUDIODRIVER: pulseaudio
+      SDL_AUDIODRIVER: audio-playback
     plugs:
       - audio-playback
       - network
