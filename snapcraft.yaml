@@ -53,7 +53,7 @@ parts:
 apps:
   Rexuiz:
     extensions: [gnome-3-38]
-    command: rexuiz-snap-wrapper
+    command: bin/rexuiz-snap-wrapper
     environment:
       SDL_AUDIODRIVER: pulseaudio
     plugs:
